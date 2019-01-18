@@ -7,5 +7,6 @@
   "I don't do a whole lot."
   [& args]
   (prn (mount/status))
-  (prn (namespace-deps/start))
+  ;; Start up to a, should also start c because it's needed for a
+  (prn (namespace-deps/start #'mount-lite-18.a/a))
   (prn (mount/status)))
